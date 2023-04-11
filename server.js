@@ -7,7 +7,7 @@ import logger from 'morgan'
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
-import { router as todosRouter } from './routes/todos.js'
+import { router as skillsRouter } from './routes/skills.js'
 
 // create the express app
 const app = express()
@@ -27,7 +27,7 @@ app.use(
 
 // mount imported routes
 app.use('/', indexRouter)
-app.use('/todos', todosRouter)
+app.use('/skills', skillsRouter)
 
 
 
