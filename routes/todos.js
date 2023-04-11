@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import { todos } from '../data/todo-data.js'
 
 const router = Router()
 
@@ -6,7 +7,9 @@ const router = Router()
 
 // GET localhost:3000/todos
 router.get('/', function(req, res) {
-  res.send('respond with a resource')
+  res.render('todos/index', {
+    todos: todos
+  })
 })
 
 // GET localhost:3000/todos/shrek
