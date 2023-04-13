@@ -4,6 +4,7 @@ const skills = [
   {text: 'JavaScript', done: true, _id: 139608},
 ]
 
+
 export { 
 	skills
 }
