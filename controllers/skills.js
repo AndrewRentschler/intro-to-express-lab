@@ -1,7 +1,7 @@
-import { skills } from "../data/skills.js"
+import { Skill } from '../models/skill.js'
 
 function index(req, res) {
-  Todo.find({})
+  Skill.find({})
   .then(skills=> {
     res.render('skills/index', {
       skills: skills
@@ -13,6 +13,39 @@ function index(req, res) {
   })
 }
 
+function newSkill(req, res) {
+  res.render('skills/new')
+}
+
+function create(req, res) {
+  console.log(req.body)
+  req.body.done = false
+  Skill.create(req.body)
+  .then(skill => {
+    res.redirect('/skills')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/skills')
+  })
+}
+
+function show(req, res) {
+  Skill.findById(req.params.skillID)
+  .then(skill => {
+    res.render('skills/show', {
+      skill
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/skills')
+  })
+}
+
 export {
   index,
+  newSkill as new,
+  create,
+  show
 }

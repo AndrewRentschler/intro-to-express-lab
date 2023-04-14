@@ -8,14 +8,8 @@
 </head>
 <body>
   <h1>Skills</h1>
-  <ul>
-    <a href="/skills/new">Add New Skill</a>
-    <% Skills.forEach(todo => { %>
-      <li>
-				<a href="/skills/<%= skill._id %>"><%= todo.text %></a> 
-
-			</li>
-    <% }) %>
-  </ul>
+  <h2>Skill:<%= skill._id %></h2>
+  <h3><%= skill.text %></h3>
+	<a href="/skills">Go back</a>
 </body>
 </html>
