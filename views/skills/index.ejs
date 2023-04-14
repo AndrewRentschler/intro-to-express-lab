@@ -10,10 +10,9 @@
   <h1>Skills</h1>
   <ul>
     <a href="/skills/new">Add New Skill</a>
-    <% Skills.forEach(todo => { %>
+    <% Skills.forEach(function(skill) => { %>
       <li>
-				<a href="/skills/<%= skill._id %>"><%= todo.text %></a> 
-
+				<a href="/skills/<%= skill._id %>"><%= skill.text %></a>
 			</li>
     <% }) %>
   </ul>
